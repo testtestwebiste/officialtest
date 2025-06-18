@@ -1,26 +1,28 @@
 :root {
-    --primary-bg: #f8f9fa;
-    --header-bg: #2C3E50;
-    --text-color: #333;
-    --hover-lighten: 15%;
+    --primary-bg: #FFFFFF;
+    --header-text: #2C3E50;
+    --subheader-text: #7F8C8D;
+    --btn-text: #FFFFFF;
+    --ig-color: #5D69BE;
+    --sat-color: #E74C3C;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
     background: var(--primary-bg);
-    color: var(--text-color);
+    color: #333;
     line-height: 1.6;
     min-height: 100vh;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -32,16 +34,16 @@ header {
 
 header h1 {
     font-size: 2.5rem;
+    color: var(--header-text);
     margin-bottom: 0.5rem;
-    color: var(--header-bg);
 }
 
 header p {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--subheader-text);
 }
 
-/* Navigation Buttons */
+/* Button Styles */
 .nav-buttons {
     display: flex;
     gap: 1.5rem;
@@ -49,20 +51,24 @@ header p {
     flex-wrap: wrap;
 }
 
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
 .nav-btn, .subject-btn {
     display: inline-block;
     padding: 1rem 2rem;
     border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
+    color: var(--btn-text);
+    font-weight: 600;
     text-align: center;
+    text-decoration: none;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .nav-btn {
@@ -70,27 +76,34 @@ header p {
     font-size: 1.1rem;
 }
 
-/* Subject Grid */
-.subject-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
+#ig-btn {
+    background-color: var(--ig-color);
+}
+
+#sat-btn {
+    background-color: var(--sat-color);
 }
 
 .subject-btn {
+    background-color: var(--btn-color);
     padding: 1.5rem 1rem;
 }
 
-/* Hover Effects */
+/* Hover & Active Effects */
 .nav-btn:hover, .subject-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* Responsive */
+.nav-btn:active, .subject-btn:active {
+    transform: translateY(1px);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav-buttons {
         flex-direction: column;
+        align-items: center;
     }
     
     .subject-grid {
