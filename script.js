@@ -49,3 +49,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
 });
+// YouTube Video Loader
+document.addEventListener('DOMContentLoaded', function() {
+    const videoFallback = document.getElementById('video-fallback');
+    const loadButton = document.getElementById('load-video');
+    const iframe = document.getElementById('yt-video');
+    
+    // Check if video loaded
+    setTimeout(() => {
+        if (iframe && iframe.contentWindow && !iframe.src.includes('autoplay=1')) {
+            // Show fallback if video not loaded after 3 seconds
+            videoFallback.classList.add('active');
+        }
+    }, 3000);
+    
+    // Retry loading video
+    if (loadButton) {
+        loadButton.addEventListener('click', function() {
+            iframe.src += '&autoplay=1';
+            videoFallback.classList.remove('active');
+        });
+    }
+});
