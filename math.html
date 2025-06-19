@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IG Mathematics</title>
     <link rel="stylesheet" href="style.css">
-     <meta http-equiv="X-Frame-Options" content="allow">
+    <!-- Important security meta tags -->
+    <meta http-equiv="X-Frame-Options" content="allow">
     <meta http-equiv="Content-Security-Policy" content="frame-src https://www.youtube.com;">
 </head>
 <body>
@@ -16,20 +17,18 @@
         </header>
         
         <main>
-            <!-- YouTube Video Embed -->
+            <!-- YouTube Video Embed (Fixed) -->
             <div class="video-container">
                 <iframe 
-                    width="560" 
-                    height="315" 
-                    src="https://www.youtube.com/watch?v=GiCojsAWRj0&list=PL0o_zxa4K1BWYThyV4T2Allw6zY0jEumv" 
+                    src="https://www.youtube-nocookie.com/embed/YOUTUBE_VIDEO_ID?rel=0" 
                     title="YouTube video player" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
+                    allowfullscreen
+                    loading="lazy">
                 </iframe>
             </div>
             
-            <!-- Back Button -->
             <div class="back-btn-container">
                 <a href="ig.html" class="back-btn">← Back to IG Subjects</a>
             </div>
