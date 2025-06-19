@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IG Mathematics</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Important security meta tags -->
-    <meta http-equiv="X-Frame-Options" content="allow">
-    <meta http-equiv="Content-Security-Policy" content="frame-src https://www.youtube.com;">
+    <!-- Security policies -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com;">
 </head>
 <body>
     <div class="container">
@@ -17,24 +16,23 @@
         </header>
         
         <main>
-            <!-- YouTube Video Embed (Fixed) -->
+            <!-- YouTube Video Container with Fallback -->
             <div class="video-container">
-                <iframe 
-                    src="https://www.youtube-nocookie.com/embed/YOUTUBE_VIDEO_ID?rel=0" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen
-                    loading="lazy">
-                </iframe>
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID?enablejsapi=1" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        id="yt-video">
+                    </iframe>
+                </div>
+                <div class="video-fallback" id="video-fallback">
+                    <p>Video cannot be loaded. <button id="load-video">Click to try again</button></p>
+                </div>
             </div>
             
             <div class="back-btn-container">
                 <a href="ig.html" class="back-btn">← Back to IG Subjects</a>
-            </div>
-        </main>
-    </div>
-    
-    <script src="script.js"></script>
-</body>
-</html>
+            </div
